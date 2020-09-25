@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pet_app/screen2.dart';
 
@@ -19,10 +19,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(isDrawer?40:0),
+        color: Colors.white,
+      ),
       transform: Matrix4.translationValues(xOffSet, yOffSet, 0)
         ..scale((scaleFactor)),
       duration: Duration(milliseconds: 250),
-      color: Colors.white,
+
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -156,7 +160,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             margin: EdgeInsets.only(top: 40),
                           ),
                           Align(
-                            child: Image.asset('images/pet-cat1.png'),
+                            child: Hero(tag: 1,
+                                child: Image.asset('images/pet-cat2.png')),
                           ),
                         ],
                       ),
@@ -196,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           margin: EdgeInsets.only(top: 40),
                         ),
                         Align(
-                          child: Image.asset('images/pet-cat2.png'),
+                          child:  Image.asset('images/pet-cat1.png'),
                         ),
                       ],
                     ),
