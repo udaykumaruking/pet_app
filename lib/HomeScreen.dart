@@ -20,13 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(isDrawer?40:0),
+        borderRadius: BorderRadius.circular(isDrawer ? 40 : 0),
         color: Colors.white,
       ),
       transform: Matrix4.translationValues(xOffSet, yOffSet, 0)
         ..scale((scaleFactor)),
       duration: Duration(milliseconds: 250),
-
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -140,8 +139,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Screen2()));
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Screen2()));
               },
               child: Container(
                 height: 240,
@@ -160,7 +160,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             margin: EdgeInsets.only(top: 40),
                           ),
                           Align(
-                            child: Hero(tag: 1,
+                            child: Hero(
+                                tag: 1,
                                 child: Image.asset('images/pet-cat2.png')),
                           ),
                         ],
@@ -177,13 +178,44 @@ class _HomeScreenState extends State<HomeScreen> {
                             bottomRight: Radius.circular(20),
                           ),
                         ),
+                        child: Container(
+                          padding: EdgeInsets.only(left: 15, right: 15),
+                          child: Container(
+
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(height: 25,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: <Widget>[
+                                    Text(
+                                      "Sala",
+                                      style: TextStyle(fontWeight: FontWeight.w500),
+                                    ),
+                                    Icon(Icons.add),
+                                  ],
+                                ),
+                                SizedBox(height: 15,),
+                                Text('Abyssinan Cat'),
+                                SizedBox(height: 15,),
+                                Text('2 Years Old'),
+                                SizedBox(height: 15,),
+                                Row(
+                                  children: <Widget>[
+                                    Icon(Icons.location_on),
+                                    Text('Distance: 7.5km'),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-
             Container(
               height: 240,
               margin: EdgeInsets.symmetric(horizontal: 20),
@@ -199,15 +231,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             boxShadow: listShadow,
                           ),
                           margin: EdgeInsets.only(top: 40),
+
                         ),
                         Align(
-                          child:  Image.asset('images/pet-cat1.png'),
+                          child: Image.asset('images/pet-cat1.png'),
                         ),
                       ],
                     ),
                   ),
                   Expanded(
                     child: Container(
+                      height: 240,
                       margin: EdgeInsets.only(top: 60, bottom: 20),
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -215,6 +249,38 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(20),
                           bottomRight: Radius.circular(20),
+                        ),
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.only(left: 15, right: 15),
+                        child: Container(
+
+                          child: Column(
+                            children: <Widget>[
+                              SizedBox(height: 25,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text(
+                                    "Sala",
+                                    style: TextStyle(fontWeight: FontWeight.w500),
+                                  ),
+                                  Icon(Icons.add),
+                                ],
+                              ),
+                              SizedBox(height: 15,),
+                              Text('Abyssinan Cat'),
+                              SizedBox(height: 15,),
+                              Text('2 Years Old'),
+                              SizedBox(height: 15,),
+                              Row(
+                                children: <Widget>[
+                                  Icon(Icons.location_on),
+                                  Text('Distance: 7.5km'),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
